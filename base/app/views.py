@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm 
 from .models import Room, Topic, Message
-from .forms import RoomForm
+from .forms import RoomForm, UserForm
 
 def loginPage(request): 
     page = 'login'
@@ -72,11 +72,13 @@ def room(request, pk):
     participants = room.participants.all()
 
     if request.method == 'POST':
-        messageobj = Message.objects.create(
-            user = request.user,
-            room = room,
-            body = request.POST.get('body')
-        )
+        body = request.POST.get('body')
+        if body:
+            messageobj = Message.objects.create(
+                user=request.user,
+                room=room,
+                body=body
+            )
         room.participants.add(request.user)
         return redirect('room', pk = room.id)
     context = {'room' : room, 'roommessages' : roommessages, 'participants' : participants}
@@ -152,4 +154,11 @@ def deleteMessage(request, pk):
 
 @login_required(login_url='login')
 def updateUser(request):
-    return render(request, 'app/update-user.html')
+    user = request.user
+    form = UserForm(instance=user)
+    if request.method == 'POST':
+        form = UserForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('user-profile', pk = user.id)
+    return render(request, 'app/update-user.html', {'form' : form})
