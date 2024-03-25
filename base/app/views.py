@@ -119,7 +119,7 @@ def updateRoom(request, pk):
         topic_name = request.POST.get('topic')
         topic, created = Topic.objects.get_or_create(name = topic_name)
         room.name = request.POST.get('name')
-        room.topic = request.POST.get('topic')
+        room.topic = topic
         room.description = request.POST.get('description')
         room.save()
         return redirect('home')
@@ -149,3 +149,7 @@ def deleteMessage(request, pk):
         message.delete()
         return redirect('home')
     return render(request, 'app/delete.html', {'obj' : message})
+
+@login_required(login_url='login')
+def updateUser(request):
+    return render(request, 'app/update-user.html')
