@@ -1,6 +1,8 @@
 {% extends 'main.html' %}
 
 {% block content %}
+{% load static %}
+
   <main class="layout">
     <div class="container">
       <div class="layout__box">
@@ -17,12 +19,12 @@
         </div>
 
         <div class="activities-page layout__body">
-          {% for message in room_messages %}
+          {% for message in room_messages %}  
             <div class="activities__box">
               <div class="activities__boxHeader roomListRoom__header">
                 <a href="{% url 'user-profile' message.user.id %}" class="roomListRoom__author">
                   <div class="avatar avatar--small">
-                    <img src="https://randomuser.me/api/portraits/women/11.jpg" />
+                    <img src="{% static 'images/avatar.svg' %}" />
                   </div>
                   <p>
                     @{{ message.user }}

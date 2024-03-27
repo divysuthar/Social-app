@@ -1,3 +1,5 @@
+{% load static %}
+
 <div class="activities">
     <div class="activities__header">
         <h2>Recent Activities</h2>
@@ -7,7 +9,7 @@
         <div class="activities__boxHeader roomListRoom__header">
             <a href="{% url 'user-profile' message.user.id %}" class="roomListRoom__author">
                 <div class="avatar avatar--small">
-                    <img src="https://randomuser.me/api/portraits/women/11.jpg" />
+                    <img src="{% static 'images/avatar.svg' %}" />
                 </div>
                 <p>
                     @{{message.user}}

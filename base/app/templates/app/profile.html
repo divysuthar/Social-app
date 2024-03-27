@@ -1,7 +1,7 @@
 {% extends 'main.html' %}
 
 {% block content %}
-
+{% load static %}
 <main class="profile-page layout layout--3">
   <div class="container">
     <!-- Topics Start -->
@@ -13,7 +13,7 @@
       <div class="profile">
         <div class="profile__avatar">
           <div class="avatar avatar--large active">
-            <img src="https://randomuser.me/api/portraits/men/11.jpg" />
+            <img src="{% static 'images/avatar.svg' %}" />
           </div>
         </div>
         <div class="profile__info">
@@ -35,7 +35,7 @@
 
       <div class="roomList__header">
         <div>
-          <h2>Study Rooms Hosted by dennis_ivy</a>
+          <h2>Study Rooms Hosted by {{user.username}} </a>
           </h2>
         </div>
       </div>
