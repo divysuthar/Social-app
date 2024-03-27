@@ -1,15 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
 :root {
-  --color-main: #71c6dd;
+  /* button and title axar */
+  --color-main: #09814A;
+
   --color-main-light: #e1f6fb;
-  --color-dark: #3f4156;
-  --color-dark-medium: #51546e;
-  --color-dark-light: #696d97;
-  --color-light: #e5e5e5;
+  /* mainbackgrouncolor */
+  --color-dark: #F5F0F6;
+
+  /* serch box and meeting topic nsme ma */
+  --color-dark-medium: #8AAA79;
+  --color-dark-light: #8AAA79;
+  --color-light: #8F754F;
   --color-gray: #8b8b8b;
-  --color-light-gray: #b2bdbd;
-  --color-bg: #2d2d39;
+  /* font color */
+  --color-light-gray: #2B4162;
+  --color-bg: #2B4162;
   --color-success: #5dd693;
   --color-error: #fc4b0b;
 }
@@ -108,7 +114,7 @@ a {
   color: var(--color-light);
 }
 
-.btn > svg {
+.btn>svg {
   fill: currentColor;
   width: 1.6rem;
   height: 1.6rem;
@@ -236,7 +242,7 @@ a {
   background-color: var(--color-dark-medium);
 }
 
-.dropdown-menu > a:not(:last-child) {
+.dropdown-menu>a:not(:last-child) {
   border-bottom: 1px solid var(--color-dark-medium);
 }
 
@@ -270,7 +276,7 @@ a {
   background-color: var(--color-dark);
 }
 
-.header > .container {
+.header>.container {
   display: flex;
   gap: 9.5rem;
 }
@@ -282,18 +288,18 @@ a {
   align-items: center;
 }
 
-.header__logo > img {
+.header__logo>img {
   height: 3.2rem;
   width: 3.2rem;
 }
 
-.header__logo > h1 {
+.header__logo>h1 {
   font-weight: 700;
   font-size: 2rem;
   color: var(--color-light);
 }
 
-.header__search > label {
+.header__search>label {
   background-color: var(--color-dark-medium);
   padding: 1.3rem 1rem;
   display: flex;
@@ -310,19 +316,21 @@ a {
 }
 
 .header__search input {
-  width: 30rem;
+  width: 40rem;
   background: transparent;
   border: none;
   outline: none;
   color: var(--color-light);
 }
 
+
+
 @media screen and (max-width: 800px) {
   .header__search input {
     width: 20rem;
   }
 
-  .header > .container {
+  .header>.container {
     gap: 3rem;
   }
 }
@@ -393,38 +401,42 @@ a {
   margin-top: 2.4rem;
 }
 
-.layout > .container {
+.layout>.container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.layout--3 > .container > div:first-child {
+.layout--3>.container>div:first-child {
   flex-basis: 18%;
   max-width: 22.5rem;
 }
 
-.layout--3 > .container > div:nth-child(2) {
+.layout--3>.container>div:nth-child(2) {
   flex-basis: 50%;
 }
 
-.layout--3 > .container > div:last-child {
+.layout--3>.container>div:last-child {
   flex-basis: 25%;
 }
 
-.layout--2 > .container > div:first-child {
+.layout--2>.container>div:first-child {
   flex-basis: 72%;
 }
 
-.layout--2 > .container > div:last-child {
+.layout--2>.container>div:last-child {
   flex-basis: 25%;
 }
+
 /*========== Layout Box ==========*/
+
+
 
 .layout__box {
   width: 90%;
   max-width: 48rem;
-  min-height: 40rem;
+  /* height: 5vh; */
+  min-height: 50rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -433,6 +445,10 @@ a {
   border-radius: 1rem;
   box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+}
+
+.temp {
+  min-height: 22rem;
 }
 
 .layout__boxHeader {
@@ -464,12 +480,13 @@ a {
 }
 
 @media screen and (max-width: 900px) {
+
   .activities,
   .topics {
     display: none;
   }
 
-  .layout--3 > .container > div:nth-child(2) {
+  .layout--3>.container>div:nth-child(2) {
     flex-basis: 100%;
   }
 }
@@ -793,7 +810,8 @@ a {
 ================================*/
 
 .create-room.layout .layout__box {
-  max-width: 68rem;
+  max-width: auto;
+  height: 5vh;
 }
 
 /*==============================
@@ -801,7 +819,8 @@ a {
 ================================*/
 
 .update-account.layout .layout__box {
-  max-width: 68rem;
+  max-width: auto;
+  height: 5vh;
 }
 
 /*==============================
@@ -809,7 +828,8 @@ a {
 ================================*/
 
 .delete-item.layout .layout__box {
-  max-width: 68rem;
+  max-width: auto;
+  height: 5vh;
 }
 
 /*==============================
@@ -823,6 +843,7 @@ a {
   font-weight: 500;
   font-size: 1.8rem;
 }
+
 .auth .layout__boxHeader {
   text-align: center;
   justify-content: center;
@@ -912,7 +933,7 @@ a {
     display: none;
   }
 
-  .layout--2 > .container > div:first-child {
+  .layout--2>.container>div:first-child {
     flex-basis: 100%;
   }
 }
@@ -1107,7 +1128,7 @@ a {
   background: transparent;
 }
 
-.room__message > form > input {
+.room__message>form>input {
   resize: none;
   background-color: var(--color-dark-light);
   color: var(--color-light);
@@ -1123,7 +1144,7 @@ a {
   position: relative;
 }
 
-.room__message > form > input::placeholder {
+.room__message>form>input::placeholder {
   color: var(--color-light-gray);
 }
 
