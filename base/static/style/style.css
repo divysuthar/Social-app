@@ -2,20 +2,23 @@
 
 :root {
   /* button and title axar */
-  --color-main: #09814A;
+  --color-main: #344966;
 
-  --color-main-light: #e1f6fb;
+  --color-main-light: #FFFFFC;
+
   /* mainbackgrouncolor */
-  --color-dark: #F5F0F6;
+  --color-dark: #F0F4EF;
 
   /* serch box and meeting topic nsme ma */
-  --color-dark-medium: #8AAA79;
-  --color-dark-light: #8AAA79;
+  --color-dark-medium: #B4CDED;
+  --color-dark-light: #F0F4EF;
   --color-light: #8F754F;
   --color-gray: #8b8b8b;
   /* font color */
-  --color-light-gray: red;
-  --color-bg: #2B4162;
+  --color-light-gray: #008DD5;
+  --color-time: #F5F0F6;
+  --color-darkfont: #0D1821;
+  --color-bg: #0D1821;
   --color-success: #5dd693;
   --color-error: #fc4b0b;
 }
@@ -53,7 +56,7 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-size: 1.5rem;
-  color: var(--color-light-gray);
+  color: var(--color-time);
   background-color: var(--color-bg);
   min-height: 100vh;
 }
@@ -721,7 +724,7 @@ a {
 }
 
 .roomListRoom__joined {
-  color: var(--color-light-gray);
+  color: var(--color-darkfont);
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -737,6 +740,7 @@ a {
 
 .roomListRoom__topic {
   padding: 5px 1.5rem;
+  color: #0D1821;
   background-color: var(--color-dark-medium);
   border-radius: 5rem;
   font-weight: 500;
@@ -1174,7 +1178,7 @@ a {
 }
 
 .participant p {
-  color: var(--color-light-gray);
+  color: var(--color-light-gra);
   line-height: 1.2;
 }
 
@@ -1183,4 +1187,8 @@ a {
   font-weight: 500;
   color: var(--color-main);
   font-weight: 1.4rem;
+}
+
+.allcolor {
+  color: #F56476;
 }

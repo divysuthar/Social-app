@@ -24,12 +24,14 @@
                     {% csrf_token %}
 
                     <div class="form__group">
-                        <label for="room_topic"> Enter a Topic </label>
-                        <input required type="text" value="{{room.topic.name}}" name="topic" list="topic-list">
+                        <label for="room_topic" style="color:  black; font-size: 1vw;"> Enter a Topic </label>
+                        <input required type="text" value="{{room.topic.name}}" style="border: 2px solid black;"
+                            name="topic" list="topic-list">
                         <datalist id="topic-list">
                             <select name="" id="room_topic">
                                 {% for topic in topics %}
-                                <option value="{{topic.name}}"> {{topic.name}} </option>
+                                <option value="{{topic.name}}" style="border: 2px solid black;"> {{topic.name}}
+                                </option>
                                 {% endfor %}
                             </select>
                         </datalist>
@@ -37,13 +39,13 @@
                     </div>
 
                     <div class="form__group">
-                        <label for="room_name"> Room name </label>
-                        {{form.name}}
+                        <label for="room_name" style="color: black;"> Room name </label>
+                        <div style="border: 2px solid black;">{{form.name}}</div>
                     </div>
 
                     <div class="form__group">
-                        <label for="room_descrition"> Room description </label>
-                        {{form.description}}
+                        <label for="room_descrition" style="color: black;"> Room description </label>
+                        <div style="border: 2px solid black;">{{form.description}}</div>
                     </div>
 
                     <!-- <div class="form__group">
@@ -60,8 +62,8 @@
                     </div> -->
 
                     <div class="form__action">
-                        <a class="btn btn--dark" href="index.html">Cancel</a>
-                        <button class="btn btn--main" type="submit">Submit</button>
+                        <a class="btn btn--dark" href="index.html" style="border: 2px solid black;">Cancel</a>
+                        <button class="btn btn--main" type="submit" style="border: 2px solid black;">Submit</button>
                     </div>
                 </form>
             </div>

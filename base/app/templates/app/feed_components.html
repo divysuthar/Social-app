@@ -7,10 +7,10 @@
         <div class="avatar avatar--small">
           <img src="{% static 'images/avatar.svg' %}" />
         </div>
-        <span>@{{ room.host.username }}</span>
+        <span style="color: #008DD5">@{{ room.host.username }}</span>
       </a>
       <div class="roomListRoom__actions">
-        <span>{{ room.created }} days ago</span>
+        <span style="color: #0D1821;">{{ room.created }}</span>
       </div>
     </div>
     <div class="roomListRoom__content">
