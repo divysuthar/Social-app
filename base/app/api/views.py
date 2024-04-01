@@ -23,3 +23,5 @@ def getRoom(request, pk):
     room = Room.objects.get(id = pk)
     serializer = RoomSerializers(room, many = False)
     return Response(serializer.data)
+
+

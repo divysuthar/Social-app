@@ -29,7 +29,8 @@
                     {% endfor %}
 
                     <div class="form__action">
-                        <a class="btn btn--dark" href="index.html" style="border: 1px solid black;">Cancel</a>
+                        <a class="btn btn--dark" href="{% url 'home' %}" style="border: 1px solid black;">Cancel</a>
+
                         <button class="btn btn--main" type="submit" style="border: 1px solid black;">Update</button>
                     </div>
                 </form>
