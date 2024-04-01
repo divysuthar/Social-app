@@ -1192,3 +1192,22 @@ a {
 .allcolor {
   color: #F56476;
 }
+
+.activities_scroll {
+  overflow: scroll;
+  height: 78vh;
+}
+
+.room_scroll {
+  overflow: scroll;
+  height: 75vh;
+  scroll-behavior: smooth;
+}
+
+.activities_scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.room_scroll::-webkit-scrollbar {
+  display: none;
+}
