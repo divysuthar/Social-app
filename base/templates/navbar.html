@@ -1,14 +1,12 @@
 {% load static %}
-<!-- <html>
-<head>
-  <title>SYNORA</title>
-  <link rel="icon" type="image/x-icon" href="../static/images/icons/icon.png">
-</head> -->
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
 <header class="header header--loggedIn">
   <div class="container">
     <a href="{% url 'home' %}" class="header__logo">
       <img src="{% static 'images/icons/icon.png' %}" style="height: 40px;width: 40px;" />
-      <h1 style="font-family:cursive;">SYNORA</h1>
+      <div id="typeitcss">
+        <h1 style="font-family:cursive;"><span id="typeit-text" class="pacifico-regular"></span></h1>
+      </div>
     </a>
     <form class="header__search" method="GET" action="{% url 'home' %}">
       <label>
@@ -74,11 +72,18 @@
     </nav>
   </div>
 </header>
-<!-- </html> -->
 
-<!-- {% if request.user.is_authenticated %}
-<p>Hello ... {{request.user}}</p>
-<a href="{% url 'logout' %}">Logout</a>
-{% else %}
-<a href="{% url 'login' %}">Login</a>
-{% endif %} -->
+<script>
+  // Initialize TypeIt with loop
+  new TypeIt('#typeit-text', {
+    speed: 100,
+    waitUntilVisible: true,
+    loop: true // Enable loop
+  })
+  .type("Synora") // Type "SYNORA"
+  .pause(1000) // Pause for 1 second
+  .delete(null, {delay: 500}) // Delete the text with a delay of 500ms between each character
+  .type("Make Friends!")
+  .pause(1000)
+  .go(); // Start animation
+</script>

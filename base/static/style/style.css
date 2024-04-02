@@ -1211,3 +1211,26 @@ a {
 .room_scroll::-webkit-scrollbar {
   display: none;
 }
+
+#typeitcss {
+
+  width: 20rem;
+  color: black;
+}
+
+#typeit-text {
+  line-height: 1.6;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+
+  font-size: 2.5rem;
+  color: #8F754F;
+
+  min-height: 100vh;
+}
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
