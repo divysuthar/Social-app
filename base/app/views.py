@@ -9,8 +9,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Room, Topic, Message
 from .forms import RoomForm, UserForm
 
-def loginPage(request): 
-    page = 'login'
+def loginPage(request):
     if request.user.is_authenticated:
         return redirect('home')
     
@@ -28,7 +27,7 @@ def loginPage(request):
         if user is not None:
             login(request, user)
             return redirect('home')
-    context = {'page' : page}
+    context = {'page' : 'login'}
     return render(request, 'app/login_register.html', context)
 
 def logoutPage(request):
@@ -36,12 +35,12 @@ def logoutPage(request):
     return redirect('home')
 
 def registerPage(request):
-    # page = 'register'
     form = UserCreationForm()
 
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
-        if form.is_valid:
+        print(form)
+        if form.is_valid():
             user = form.save(commit=False)
             user.username = user.username.lower()
             user.save()
@@ -58,7 +57,6 @@ def home(request):
         Q(name__icontains = q) | 
         Q(description__icontains = q)
         )
-    # rooms = Room.objects.filter(topic__name__icontains = q)
     topics = Topic.objects.all()[0:5]
     room_count = rooms.count()
     roommessages = Message.objects.filter(Q(room__topic__name__contains = q))
@@ -66,6 +64,7 @@ def home(request):
     context = {'rooms' : rooms, 'topics' : topics, 'room_count' : room_count, 'roommessages' : roommessages}
     return render(request, 'app/home.html', context)
 
+@login_required(login_url='login')
 def room(request, pk):
     room = Room.objects.get(id=pk)
     roommessages = room.message_set.all()

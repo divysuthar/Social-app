@@ -128,6 +128,13 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
+# settings.py
+
+SESSION_COOKIE_AGE = 600 # 10 minutes (in seconds)
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_SAVE_EVERY_REQUEST = False  # Important!
+
+
 # STARIC_ROOT = 
 
 # Default primary key field type

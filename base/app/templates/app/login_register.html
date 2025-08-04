@@ -61,8 +61,10 @@
           {% csrf_token %}
           {% for field in form %}
           <div class="form__group form__group">
+            {% if field.label != "Password-based authentication" %}
             <label for="room_name" style="color: black;"> {{field.label}} </label>
             <div style="border: 1px solid black;">{{field}}</div>
+            {% endif %}
           </div>
           {% endfor %}
 
