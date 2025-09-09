@@ -41,6 +41,18 @@ To get a local copy up and running, follow these simple steps:
    ```bash
    git clone https://github.com/divysuthar/Social-app
 
-## Install dependencies
+2. **Install dependencies**
    ```bash
    pip install -r requirements.txt
+
+3. **Run code without docker**
+  ``` bash
+  cd base
+  python manage.py runserver
+  ```
+
+4. **Run code with docker**
+  ``` bash
+  docker build -t my_django_app .
+  docker run -p 8000:8000 my_django_app
+```
